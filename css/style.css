@@ -1,0 +1,98 @@
+
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      height: 100vh;
+    }
+
+    .izquierda {
+      display: flex;
+      width:60%; /* Ocupa 50% del espacio disponible */
+      flex-direction: column; /* Alinea los elementos verticalmente */
+    }
+
+    .izquierda > div {
+      margin: 0;
+      padding: 0;
+      flex: 1; /* Cada sección izquierda ocupa el 50% del espacio disponible */
+      background-color: #f0f0f0;
+     
+      overflow: hidden;
+    }
+    .derecha {
+      flex: 2; /* Ocupa el 100% del espacio disponible */
+      background-color: #e0e0e0;
+      padding: 20px;
+    }
+    .derecha img {
+      max-width: 90%; /* Asegura que la imagen no exceda el ancho del contenedor */
+      height: auto; /* Mantiene la proporción de aspecto de la imagen */
+    }
+    .marquing > img{
+      width: 100%;
+      height: 100vh;
+      background-size: cover;
+    }
+    #salidas {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 2rem;
+      border-collapse: collapse;
+      width: 100%;
+      text-transform: capitalize;
+    }
+
+    #salidas td, #salidas th {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+
+    #salidas tr:nth-child(even){background-color: #f2f2f2;}
+
+    #salidas tr:hover {background-color: #ddd;}
+
+    #salidas th {
+      font-size: 1rem !important;
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: left;
+      background-color: #04AA6D;
+      color: white;
+    }
+
+    #salidas table tr:first-child {
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+    #salidas table tr *:first-child {
+      position: sticky;
+      left: 0;
+      z-index: 2;
+    }
+
+    .izquierda .marquing{
+      display:flex;
+      width: 100%;
+      animation: scroll 15s 0.5s linear infinite;
+    }
+    .slider {
+        display: flex;
+        width: 30%;
+        height: 100vh;
+        scroll-snap-type: x mandatory;
+    }
+    .slider img {
+      flex: 0 0 100%;
+      width: 100%;
+      object-fit: cover;
+      scroll-snap-align: center;
+    }
+    @keyframes scroll{
+      from{
+        transform: translateY(0);
+      }
+      to{
+        transform: translateY(-200px);
+      }
+    }
